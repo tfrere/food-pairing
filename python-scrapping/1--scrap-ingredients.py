@@ -36,9 +36,9 @@ def writeIngredientFile(i):
             newItem = {"name": item[1]["entity_details"]["name"], "wiki": item[1]["entity_details"]["wiki"].replace("https://en.wikipedia.org/wiki/", ""), "id": item[1]["entity_details"]["id"], "category": item[1]["entity_details"]["category"], "common_molecules": item[1]["common_molecules"]}
             data.append(newItem)
 
-        response = {"id": i, "name": ingredientName, "ingredients_sharing_molecules": data}
+        response = {"id": i, "slug": slugify(ingredientName), "name": ingredientName, "ingredients_sharing_molecules": data}
         with open(outputFolderUrl + "/ingredients/" + slugify(ingredientName) + ".json", 'w') as fp:
-            fp.write("%s\n" % response)
+            fp.write("%s\n" % json.dumps(response))
         return True
 
 
