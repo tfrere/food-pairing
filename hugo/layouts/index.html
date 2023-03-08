@@ -2,20 +2,19 @@
   <div class="page">
     <div class="nav">
       <header class="header">
-        <h1 class="header__title">Recipes</h1>
-        <span class="header__meta" id="meta">Recipes : 1200 | Ingredients : 604 </span>
+        <h1 class="header__title">Food pairing</h1>
+        <span class="header__meta" id="meta">Ingredients : 906 </span>
       </header>
       <div class="search">
-        <input id="search" type="text" class="search__bar" placeholder="Search by ingredients or recipe name..." />
+        <input id="search" type="text" class="search__bar" placeholder="Search by ingredient name..." />
         <span class="search__length" id="results-length"></span>
       </div>
     </div>
-    <div class="main">
+    <!-- <div class="main">
       <h3 id="title" class="main__title">Random recipes</h3>
       <ul id="results" class="results"></ul>
-    </div>
-    <div id="images" style="display: none">
-      <!-- Ranges through content/recipes/*.md -->
+    </div> -->
+    <!-- <div id="images" style="display: none">
       {{ range $i, $item := where .Site.RegularPages "Type" "recipes" }} 
       
       {{ with $item.Resources.ByType "image" }}
@@ -48,7 +47,7 @@
         {{ end }}
       {{ end }}
     {{ end }}
-    </div>
+    </div> -->
   </div> 
   {{ partial "js" }}
 {{ end }}

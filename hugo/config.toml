@@ -1,4 +1,4 @@
-baseURL = "http://recipes.tfrere.com/"
+baseURL = "http://food-pairing.tfrere.com/"
 defaultContentLanguage = 'en'
 languageCode = "en-us"
 title = "RECIPES"
@@ -13,20 +13,14 @@ timeout = 600000
 
 disableKinds = ["sitemap"]
 
-[menu]
-  [[menu.main]]
-  	identifier = "index"
-    name = "index"
-    pre = ""
-    url = "/"
-    weight = 0
-  [[menu.main]]
-  	identifier = "pairings"
-    name = "pairings"
-    pre = ""
-    url = "/pairings/"
-    weight = 2
+[outputs]
+    home = ["HTML"]
+    page = ["json"]
+    section = ["json"]
 
+[outputFormats.ingredients]
+    baseName = "ingredients"
+    mediatype ="application/json"
 
 [markup.goldmark.renderer]
   hardWraps = true
@@ -46,8 +40,6 @@ disableKinds = ["sitemap"]
   publishResources = false
 
 
-
-
 [deployment]
 # By default, files are uploaded in an arbitrary order.
 # Files that match the regular expressions in the "Order" list
@@ -60,7 +52,7 @@ order = [".jpg$", ".gif$"]
 name = "mydeployment"
 # The Go Cloud Development Kit URL to deploy to. Examples:
 # GCS; see https://gocloud.dev/howto/blob/#gcs
-URL = "gs://recipes.tfrere.com"
+URL = "gs://food-pairing.tfrere.com"
 
 # S3; see https://gocloud.dev/howto/blob/#s3
 # For S3-compatible endpoints, see https://gocloud.dev/howto/blob/#s3-compatible

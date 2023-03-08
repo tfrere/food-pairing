@@ -1,0 +1,7 @@
+{
+  "name": "{{ .Params.name }}",
+  "slug": "{{ .Params.slug }}",
+  "id": "{{ .Params.id }}",
+  "date": "{{ .Date }}",
+  "ingredients_sharing_molecules": {{ .Params.ingredients_sharing_molecules }}
+}

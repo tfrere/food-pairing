@@ -1,0 +1,14 @@
+---
+  id : 12398
+  name : "Heptadecane"
+  slug : 12398
+  taste : 
+  bitter : 0
+  odor : fuel-like
+  natural : 1
+  flavor_profile : alkane
+  fema_flavor_profile : 
+  date : 2019-03-26T08:47:11+01:00
+---
+
+

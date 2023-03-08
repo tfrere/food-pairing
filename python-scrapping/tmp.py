@@ -16,13 +16,27 @@ else:
     recipes = glob.glob(inputFolderUrl + "*.json")
 
 for recipeFile in recipes:
-    with open(recipeFile, 'r') as fp:
-        text = fp.read().replace("'", "\"")
-        recipeJson = json.loads(text)
+    try:
+        with open(recipeFile, "r") as file:
+            recipeJson = json.load(file)
 
-        recipeJson["slug"] = slugify(recipeJson["name"])
+            for ingredient in recipeJson["ingredients_sharing_molecules"]:
+                
+                try:
+                    if(ingredient["common_molecules"][0][0]):
+                        newArray = []
+                    
+                        for item in ingredient["common_molecules"]:
+                            newArray.append(item[0])
+                        
+                        ingredient["common_molecules"] = newArray
+                except:
+                    print("toto")
+            
+            with open(recipeFile, 'w') as fp:
+                fp.write(json.dumps(recipeJson))
 
-        with open(recipeFile, 'w') as fp:
-            fp.write(json.dumps(recipeJson))
+    except json.decoder.JSONDecodeError as e:
+        print("error")
 
 print("Json to md done !")

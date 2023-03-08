@@ -1,0 +1,12 @@
+{
+  "name": "{{ .Params.name }}",
+  "slug": "{{ .Params.slug }}",
+  "id": "{{ .Params.id }}",
+  "taste": "{{ .Params.taste }}",
+  "bitter": "{{ .Params.bitter }}",
+  "odor": "{{ .Params.odor }}",
+  "natural": "{{ .Params.natural }}",
+  "flavor_profile": "{{ .Params.flavor_profile }}",
+  "fema_flavor_profile": "{{ .Params.fema_flavor_profile }}",
+  "date": "{{ .Date }}"
+}
