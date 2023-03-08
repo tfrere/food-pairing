@@ -1,0 +1,54 @@
+{{ define "main" }}
+  <div class="page">
+    <div class="nav">
+      <header class="header">
+        <h1 class="header__title">Recipes</h1>
+        <span class="header__meta" id="meta">Recipes : 1200 | Ingredients : 604 </span>
+      </header>
+      <div class="search">
+        <input id="search" type="text" class="search__bar" placeholder="Search by ingredients or recipe name..." />
+        <span class="search__length" id="results-length"></span>
+      </div>
+    </div>
+    <div class="main">
+      <h3 id="title" class="main__title">Random recipes</h3>
+      <ul id="results" class="results"></ul>
+    </div>
+    <div id="images" style="display: none">
+      <!-- Ranges through content/recipes/*.md -->
+      {{ range $i, $item := where .Site.RegularPages "Type" "recipes" }} 
+      
+      {{ with $item.Resources.ByType "image" }}
+        {{ range . }}
+          {{ $pathArr := split .RelPermalink "." }}
+          {{ $pathLen := len $pathArr }}
+          {{ $slug := .Params.slug}}
+          {{ $slug := index ($pathArr) 0 }}
+          {{ $slug := index (split $slug "/") 2 }}
+          {{ $ext := index $pathArr (sub $pathLen 1) }}
+          {{ $image := .}}
+          {{ if not (eq $ext "svg") }}
+            {{ $image := .Fill "400x400" }}
+          {{ end }}
+
+          <img 
+            id="{{$slug}}"  
+            src="{{ $image.RelPermalink }}"
+          />
+          {{/*  
+          {{ if not (eq $ext "svg") }}
+          
+            {{ $image := .Fill "400x400" }}
+            <img 
+              id="{{$slug}}"  
+              src="{{ $image.RelPermalink }}"
+            />
+          {{ end }}
+            */}}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+    </div>
+  </div> 
+  {{ partial "js" }}
+{{ end }}

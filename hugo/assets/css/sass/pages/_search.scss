@@ -1,0 +1,66 @@
+.page {
+    @apply w-full;
+  }
+  
+  .main {
+    @apply pt-44 m-4 ;
+  }
+  
+  .main__title {
+      @apply text-gray-400 mb-2;
+  }
+  
+  .nav {
+    @apply fixed top-0 w-full bg-white;
+  }
+  
+  /* TITLE */
+  
+  .header {
+    @apply flex items-center justify-between;
+  }
+  
+  .header__title {
+    @apply m-4 mb-0 text-4xl font-black;
+  }
+  
+  .header__meta {
+    @apply m-4 mb-0 text-xl text-gray-400;
+  }
+  
+  /* SEARCH */
+  
+  .search {
+    @apply relative m-4 w-full;
+  }
+  
+  .search__bar {
+    @apply w-full rounded-md border p-4;
+    width: calc(100% - 2rem);
+  }
+  
+  .search__length {
+    @apply absolute top-4 right-12;
+  }
+  
+  /* RESULTS */
+  
+  .results {
+    @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4;
+  }
+  
+  .results__item {
+    @apply inline-block flex-1 rounded-md border;
+  }
+  
+  .results__item__link {
+  }
+  
+  .results__item__link__image {
+    @apply w-full rounded-t-md object-cover h-80;
+  }
+  
+  .results__item__link__name {
+    @apply p-2;
+  }
+  

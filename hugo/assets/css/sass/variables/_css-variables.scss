@@ -1,0 +1,89 @@
+$greenHue: 140;
+$greenSaturation: 39%;
+$greenLightness: 70%;
+$green: hsl($greenHue, $greenSaturation, $greenLightness);
+$darken-green: darken($green, 15%);
+$green: #83c79a;
+
+$blueHue: 188;
+$blueSaturation: 37%;
+$blueLightness: 64%;
+$blue: hsl($blueHue, $blueSaturation, $blueLightness);
+$darken-blue: darken($blue, 15%);
+$blue: #78b0b8;
+
+$pinkHue: 345;
+$pinkSaturation: 81%;
+$pinkLightness: 77%;
+$pink: hsl($pinkHue, $pinkSaturation, $pinkLightness);
+$darken-pink: darken($pink, 10%);
+$pink: #e790a6;
+
+// F38949
+$orangeHue: 23;
+$orangeSaturation: 88%;
+$orangeLightness: 62%;
+$orange: hsl($orangeHue, $orangeSaturation, $orangeLightness);
+$darken-orange: darken($orange, 15%);
+$orange: #ec8444;
+
+$yellowHue: 48;
+$yellowSaturation: 100%;
+$yellowLightness: 57%;
+$yellow: hsl($yellowHue, $yellowSaturation, $yellowLightness);
+$darken-yellow: darken($yellow, 12%);
+$yellow: #f4cc25; //#f8cf26;
+
+// ease('out-quart÷'): cubic-bezier(0.165, 0.84, 0.44, 1);
+
+:root {
+  --cursor-size: 32px;
+  --cursor-color: black;
+
+  --text-color: #121212;
+  --gray-color: rgb(180, 180, 180);
+  --subtle-gray-color: #f5f5f5;
+  --cursor-gray-color: rgba(255, 255, 255, 0.2);
+  --background-color: white;
+
+  --green: #83c79a;
+  --blue: #78b0b8;
+  --pink: #e790a6;
+  --orange: #ec8444;
+  --yellow: #f4cc25;
+  --darken-yellow: #{$darken-yellow};
+
+  --title-font: "Poppins";
+  --text-font: "Nunito Sans"; // "Poppins";
+  // --text-font: "Poppins"; // "Poppins";
+}
+
+$black: #121212;
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-color: white;
+    --gray-color: rgb(100, 100, 100);
+    --subtle-gray-color: rgb(0, 0, 0);
+    --cursor-gray-color: rgba(0, 0, 0, 0.1);
+    --background-color: rgb(30, 30, 30);
+  }
+}
+
+.black {
+  --text-color: white;
+  --gray-color: rgb(100, 100, 100);
+  --subtle-gray-color: rgb(0, 0, 0);
+  --cursor-gray-color: rgba(0, 0, 0, 0.1);
+  --background-color: rgb(30, 30, 30);
+}
+
+.white {
+  --cursor-color: black;
+  --text-color: #121212;
+  --gray-color: rgb(180, 180, 180);
+  --subtle-gray-color: #f5f5f5;
+  --cursor-gray-color: rgba(255, 255, 255, 0.2);
+  --background-color: white;
+
+}

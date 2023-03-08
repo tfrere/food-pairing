@@ -1,0 +1,52 @@
+<head itemscope itemtype="{{ .Site.BaseURL }}">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta lang="en"/>
+  <meta http-equiv="Content-Language" content="en_US" />
+
+  <meta name="author" content=" Thibaud FRERE" />
+  <meta name="copyright" content=" Thibaud FRERE" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="description" content="Thibaud FRERE's online portfolio." />
+  <link rel="canonical" href="{{ .Site.BaseURL }}" />
+
+  <base href="{{ .Site.BaseURL }}" />
+
+  {{ $title := print .Site.Title }}
+  <title>{{ $title }}</title>
+
+  {{ $dateTime := .PublishDate.Format "2006-01-02" }} {{ $dateFormat :=
+  .Site.Params.dateFormat | default "Jan 2, 2006" }}
+  <!-- <time datetime="{{ $dateTime }}">{{ .PublishDate.Format $dateFormat }}</time> -->
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-390JSY41BP"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-390JSY41BP');
+  </script>
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Thibaud Frere's online portfolio" />
+  <meta
+    property="og:description"
+    content="Design ingineer and creative programmer."
+  />
+  <meta property="og:image" content="/images/og-thumb.jpg" />
+  <meta property="og:url" content="{{ .Site.BaseURL }}" />
+  <meta property="og:site_name" content="Thibaud Frere's online portfolio" />
+
+  <meta name="twitter:title" content="Thibaud Frere's online portfolio" />
+  <meta
+    name="twitter:description"
+    content="Design ingineer and creative programmer."
+  />
+  <meta name="twitter:image" content="/images/og-thumb.jpg" />
+  <meta name="twitter:site" content="@tfrere" />
+  <meta name="twitter:creator" content="@tfrere" />
+  {{ partial "css" }}
+</head>

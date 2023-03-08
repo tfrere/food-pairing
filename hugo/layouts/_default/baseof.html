@@ -1,0 +1,15 @@
+<!doctype html>
+<html prefix="og: http://ogp.me/ns#" lang="{{ .Language }}">
+
+  {{ partial "head" . }}
+
+  <body>
+    <main id="main">
+      {{ block "main" . }}
+
+      {{ end }}
+    </main>
+    {{ partial "js" . }}
+  </body>
+
+</html>

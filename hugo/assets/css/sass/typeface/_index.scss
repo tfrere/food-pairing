@@ -1,0 +1,224 @@
+$base-size: 12px;
+
+$oswald-cap-height: 0.815;
+$nunito-sans-cap-height: 0.71;
+
+$vr-font-size: 24px;
+$vr-number-of-steps: 24;
+
+@import "_grid.scss";
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: 900;
+  pointer-events: none;
+  color: var(--text-color);
+}
+
+p,
+span {
+  font-family: var(--text-font);
+  color: var(--text-color);
+}
+
+.heading--center {
+  @apply text-center w-full inline-block;
+}
+
+.heading-0 {
+  font-size: ($base-size * 14);
+  line-height: ($base-size * 14);
+  font-family: var(--title-font);
+  @apply font-bold;
+}
+
+.heading-05 {
+  font-size: ($base-size * 13);
+  line-height: ($base-size * 13);
+  font-family: var(--title-font);
+  @apply font-bold;
+}
+
+.heading-1 {
+  font-size: ($base-size * 12);
+  line-height: ($base-size * 12);
+  font-family: var(--title-font);
+  @apply font-bold;
+}
+
+.heading-15 {
+  font-size: ($base-size * 11);
+  line-height: ($base-size * 11);
+  font-family: var(--title-font);
+  @apply font-bold;
+}
+
+.heading-2 {
+  font-size: ($base-size * 10);
+  line-height: ($base-size * 10);
+  font-family: var(--title-font);
+  @apply font-bold;
+}
+
+.heading-25 {
+  font-size: ($base-size * 9);
+  line-height: ($base-size * 9);
+  font-family: var(--title-font);
+  @apply font-bold;
+}
+
+.heading-3 {
+  font-size: ($base-size * 8);
+  line-height: ($base-size * 8);
+  font-family: var(--title-font);
+  @apply font-bold;
+}
+
+.heading-35 {
+  font-size: ($base-size * 7);
+  line-height: ($base-size * 7);
+  font-family: var(--title-font);
+  @apply font-bold;
+}
+
+.heading-4 {
+  font-size: ($base-size * 6);
+  line-height: ($base-size * 6);
+  font-family: var(--title-font);
+  @apply font-bold;
+}
+
+.heading-45 {
+  font-size: ($base-size * 5);
+  line-height: ($base-size * 5);
+  font-family: var(--title-font);
+  @apply font-bold;
+}
+
+.heading-5 {
+  font-size: ($base-size * 4);
+  line-height: ($base-size * 4);
+  font-family: var(--title-font);
+  @apply font-bold;
+}
+
+.heading-55 {
+  font-size: ($base-size * 3);
+  line-height: ($base-size * 3);
+  font-family: var(--title-font);
+  @apply font-bold;
+}
+
+.heading-6 {
+  font-size: ($base-size * 2);
+  line-height: ($base-size * 2);
+  font-family: var(--title-font);
+  @apply font-bold;
+}
+
+.heading-label {
+  display: block;
+  font-size: ($base-size * 2);
+  line-height: ($base-size * 2);
+  font-family: var(--title-font);
+  // font-kerning: normal;
+  letter-spacing: 0.05rem;
+  @apply my-0 py-0 font-medium;
+}
+
+// TITLE EFFECTS
+
+.word,
+.landing__title__word {
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+  pointer-events: none;
+  margin: -20px 0;
+  line-height: 1.2;
+}
+
+.word__content,
+.landing__title__word__content,
+.landing__title__word__content--first {
+  display: inline-block;
+  margin: 0;
+  line-height: 1;
+}
+
+// TEXTS
+
+.text-hero {
+  @apply inline-block my-0 py-0;
+  font-size: ($base-size * 6);
+  line-height: ($base-size * 7);
+  font-family: var(--text-font);
+}
+
+.text-lead {
+  display: inline-block;
+  font-size: ($base-size * 4);
+  line-height: ($base-size * 5);
+  font-family: var(--text-font);
+  @apply my-0 py-0;
+}
+
+.text-half-lead {
+  // width: 50ch;
+  font-size: ($base-size * 3);
+  line-height: ($base-size * 4);
+  font-family: var(--text-font);
+  @apply my-0 py-0;
+  margin-bottom: $base-size * 2;
+}
+
+.text-base {
+  // width: 50ch;
+  font-size: ($base-size * 2);
+  line-height: ($base-size * 3);
+  font-family: var(--text-font);
+  @apply my-0 py-0;
+  margin-bottom: $base-size * 2;
+  font-weight: 500;
+}
+
+.text-small {
+  // width: 50ch;
+  font-size: ($base-size * 1.5);
+  line-height: ($base-size * 2.5);
+  font-family: var(--text-font);
+  @apply my-0 py-0;
+  margin-bottom: $base-size * 2;
+  font-weight: 500;
+}
+
+.text-label {
+  // width: 50ch;
+  @apply tracking-wider;
+  font-size: ($base-size * 1.5);
+  line-height: ($base-size * 2.5);
+  font-family: var(--text-font);
+  @apply my-0 py-0;
+  margin-bottom: $base-size * 2;
+  font-weight: 500;
+}
+
+.text--center {
+  @apply text-center w-3/4 mx-auto block;
+}
+
+@import "vertical-rythm-space";
+
+.text-stroke {
+  color: var(--background-color) !important;
+  -webkit-text-stroke: 1px var(--text-color) !important;
+}
+
+strong {
+  @apply font-extrabold;
+}

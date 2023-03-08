@@ -1,0 +1,34 @@
+{
+  "name": "search-on-recipes",
+  "version": "1.0.0",
+  "description": "",
+  "engines": {
+    "node": "16.13.0"
+  },
+  "scripts": {
+    "develop": "hugo server",
+    "deploy": "hugo deploy -verbose",
+    "install-hugo": "brew install hugo",
+    "dev": " env HUGO_ENV=dev  hugo server  --disableFastRender --environment=dev",
+    "build": "env HUGO_ENV=prod  hugo --environment=prod && gzip -k -6 $(find public -type f)",
+    "buildgzip": "env HUGO_ENV=prod  hugo --environment=prod && gzip -k -6 $(find public -type f)",
+    "build-modernizr": "cd assets/js/lib; modernizr -c modernizr-config.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.13.10",
+    "@babel/core": "^7.13.10",
+    "@babel/preset-env": "^7.13.10",
+    "postcss": "^8.2.8",
+    "postcss-cli": "^7.1.0"
+  },
+  "dependencies": {
+    "elasticlunr": "^0.9.5",
+    "jquery": "^3.6.0",
+    "lunr": "^2.3.9",
+    "tailwind": "^4.0.0",
+    "tailwind-vertical-rhythm": "^1.2.0",
+    "tailwindcss": "^2.0.3",
+    "tailwindcss-font-inter": "^2.0.2"
+  }
+}
