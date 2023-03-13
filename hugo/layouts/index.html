@@ -3,51 +3,16 @@
     <div class="nav">
       <header class="header">
         <h1 class="header__title">Food pairing</h1>
-        <span class="header__meta" id="meta">Ingredients : 906 </span>
       </header>
-      <div class="search">
-        <input id="search" type="text" class="search__bar" placeholder="Search by ingredient name..." />
-        <span class="search__length" id="results-length"></span>
+      <div class="autoComplete_wrapper search">
+        <input id="autoComplete" type="text" class="search__bar" placeholder="Search by ingredient name..." />
+        <span class="search__length" id="meta"></span>
       </div>
     </div>
-    <!-- <div class="main">
-      <h3 id="title" class="main__title">Random recipes</h3>
-      <ul id="results" class="results"></ul>
-    </div> -->
-    <!-- <div id="images" style="display: none">
-      {{ range $i, $item := where .Site.RegularPages "Type" "recipes" }} 
-      
-      {{ with $item.Resources.ByType "image" }}
-        {{ range . }}
-          {{ $pathArr := split .RelPermalink "." }}
-          {{ $pathLen := len $pathArr }}
-          {{ $slug := .Params.slug}}
-          {{ $slug := index ($pathArr) 0 }}
-          {{ $slug := index (split $slug "/") 2 }}
-          {{ $ext := index $pathArr (sub $pathLen 1) }}
-          {{ $image := .}}
-          {{ if not (eq $ext "svg") }}
-            {{ $image := .Fill "400x400" }}
-          {{ end }}
 
-          <img 
-            id="{{$slug}}"  
-            src="{{ $image.RelPermalink }}"
-          />
-          {{/*  
-          {{ if not (eq $ext "svg") }}
-          
-            {{ $image := .Fill "400x400" }}
-            <img 
-              id="{{$slug}}"  
-              src="{{ $image.RelPermalink }}"
-            />
-          {{ end }}
-            */}}
-        {{ end }}
-      {{ end }}
-    {{ end }}
-    </div> -->
+    <div class="main">
+      <div class="selection"><h5>Results for</h5><div id="selection"></div></div>
+      <div class="results"><h5>Ingredients sharing molecules</h5><ul id="results"></ul></div>
+    </div>
   </div> 
-  {{ partial "js" }}
 {{ end }}

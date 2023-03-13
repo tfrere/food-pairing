@@ -23,9 +23,8 @@
     "postcss-cli": "^7.1.0"
   },
   "dependencies": {
-    "elasticlunr": "^0.9.5",
+    "@tarekraafat/autocomplete.js": "^10.2.7",
     "jquery": "^3.6.0",
-    "lunr": "^2.3.9",
     "tailwind": "^4.0.0",
     "tailwind-vertical-rhythm": "^1.2.0",
     "tailwindcss": "^2.0.3",

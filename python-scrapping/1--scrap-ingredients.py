@@ -4,9 +4,6 @@ import re
 from bs4 import BeautifulSoup
 from slugify import slugify
 from pprint import pprint
-# import numpy as np
-# involvedMolecules = np.unique(involvedMolecules + item[1]["common_molecules"])
-
 
 baseUrl = "https://cosylab.iiitd.edu.in/flavordb2"
 outputFolderUrl = '../data/'
@@ -28,6 +25,7 @@ def writeIngredientFile(i):
         return False
     else:
             
+
         ingredientData = getIngredientData(baseUrl+"/food_pairing_analysis?id=" + str(i))
         sortedData = sorted(ingredientData.items(), key=lambda item: len(item[1]["common_molecules"]),reverse=True)
 
@@ -36,17 +34,18 @@ def writeIngredientFile(i):
             newItem = {"name": item[1]["entity_details"]["name"], "wiki": item[1]["entity_details"]["wiki"].replace("https://en.wikipedia.org/wiki/", ""), "id": item[1]["entity_details"]["id"], "category": item[1]["entity_details"]["category"], "common_molecules": item[1]["common_molecules"]}
             data.append(newItem)
 
-        response = {"id": i, "slug": slugify(ingredientName), "name": ingredientName, "ingredients_sharing_molecules": data}
+        response = {"id": i, "category": ingredientData["0"]["entity_details"]["category"], "slug": slugify(ingredientName), "name": ingredientName, "ingredients_sharing_molecules": data}
         with open(outputFolderUrl + "/ingredients/" + slugify(ingredientName) + ".json", 'w') as fp:
             fp.write("%s\n" % json.dumps(response))
         return True
 
 
-min = 0
-max = 1000
+min = 321
+max = 322
 step = 1
 
 for i in range(min, max, step):
     writeIngredientFile(i)
+    
 
 

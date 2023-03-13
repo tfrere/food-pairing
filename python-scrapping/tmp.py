@@ -15,28 +15,44 @@ if(debug):
 else:
     recipes = glob.glob(inputFolderUrl + "*.json")
 
+# POUR CHAQUE INGREDIENT
 for recipeFile in recipes:
-    try:
-        with open(recipeFile, "r") as file:
-            recipeJson = json.load(file)
+    with open(recipeFile, "r") as file:
+        recipeJson = json.load(file)
 
-            for ingredient in recipeJson["ingredients_sharing_molecules"]:
+
+        #  si pas de molecules en commun du tout
+        #  ou si la categorie n'est pas listée dans le fichier catégorie
+
+        # # OUVRE LE FICHIER ET RELISTE CHAQUE INGREDIENT
+
+        # print(recipeJson["name"])
+
+        # try:
+        #     recipeJson["category"] = recipeJson["category"]
+
+        # except:    
+        #     for recipeFile2 in recipes:
+        #         with open(recipeFile2, "r") as file:
+        #             recipeJson2 = json.load(file)
+
+        #             print(recipeJson2["name"])
+
+        #             # LISTE LES INGREDIENTS EN COMMUN
+
+        #             for ingredient in recipeJson2["ingredients_sharing_molecules"]:
+
+        #                 # SI LE NOM DU FICHIER D ORIGINE EST EGAL A LINGREDIENT EN COURS
+
+        #                 print(ingredient["name"] +" == "+ recipeJson["name"])
+
+        #                 if(ingredient["id"] == recipeJson["id"]):
+        #                     recipeJson["category"] = ingredient["category"]
+        #                     with open(recipeFile, 'w') as fp:
+        #                         fp.write(json.dumps(recipeJson))
+        #                     break
+        #                     break
                 
-                try:
-                    if(ingredient["common_molecules"][0][0]):
-                        newArray = []
-                    
-                        for item in ingredient["common_molecules"]:
-                            newArray.append(item[0])
-                        
-                        ingredient["common_molecules"] = newArray
-                except:
-                    print("toto")
-            
-            with open(recipeFile, 'w') as fp:
-                fp.write(json.dumps(recipeJson))
 
-    except json.decoder.JSONDecodeError as e:
-        print("error")
 
 print("Json to md done !")

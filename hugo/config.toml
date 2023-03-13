@@ -13,6 +13,11 @@ timeout = 600000
 
 disableKinds = ["sitemap"]
 
+[[headers]]
+  for = "/*"
+    [headers.values]
+    Access-Control-Allow-Origin = "*"
+
 [outputs]
     home = ["HTML"]
     page = ["json"]
